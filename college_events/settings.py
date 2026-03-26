@@ -7,12 +7,12 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'your-secret-key-here'
+SECRET_KEY = '3g741hnega22-yl7990dykt2hi9w&#z^2*53)j5w76%cz^ub&_'
 
-DEBUG = True
+DEBUG = False
 import os
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['events-7jcp.onrender.com']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
