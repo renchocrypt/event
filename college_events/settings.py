@@ -7,10 +7,9 @@ load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = '3g741hnega22-yl7990dykt2hi9w&#z^2*53)j5w76%cz^ub&_'
+SECRET_KEY = os.getenv('SECRET_KEY', '3g741hnega22-yl7990dykt2hi9w&#z^2*53)j5w76%cz^ub&_')
 
-DEBUG = True
-import os
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -64,7 +63,6 @@ DATABASES = {
 AUTH_USER_MODEL = 'users.CustomUser'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
