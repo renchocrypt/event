@@ -5,21 +5,21 @@
 
 /* ─── Variables ─────────────────────────────── */
 :root {
-  --purple: #6c63ff;
+  --purple: #7c6af7;
   --blue: #4facfe;
   --pink: #fa709a;
-  --dark: #0a0a1a;
-  --dark-2: #111128;
-  --dark-3: #1a1a35;
-  --glass: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --dark: #060612;
+  --dark-2: #0d0d1f;
+  --dark-3: #151530;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.7);
-  --text-muted: rgba(255, 255, 255, 0.4);
-  --gradient-1: linear-gradient(135deg, #6c63ff, #4facfe);
+  --text-muted: rgba(255, 255, 255, 0.35);
+  --gradient-1: linear-gradient(135deg, #7c6af7, #4facfe);
   --gradient-2: linear-gradient(135deg, #fa709a, #fee140);
   --gradient-3: linear-gradient(135deg, #43e97b, #38f9d7);
-  --shadow-glow: 0 0 30px rgba(108, 99, 255, 0.3);
+  --shadow-glow: 0 0 40px rgba(124, 106, 247, 0.25);
   --radius: 16px;
   --radius-sm: 10px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -56,28 +56,28 @@ ul { list-style: none; }
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.25;
   animation: float 8s ease-in-out infinite;
 }
 
 .orb-1 {
-  width: 600px; height: 600px;
-  background: var(--purple);
-  top: -200px; left: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, #6c63ff, #4facfe);
+  top: -250px; left: -200px;
   animation-delay: 0s;
 }
 
 .orb-2 {
-  width: 500px; height: 500px;
-  background: var(--blue);
-  top: 50%; right: -150px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #fa709a, #fee140);
+  top: 40%; right: -200px;
   animation-delay: 3s;
 }
 
 .orb-3 {
-  width: 400px; height: 400px;
-  background: var(--pink);
-  bottom: -100px; left: 40%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #43e97b, #4facfe);
+  bottom: -150px; left: 35%;
   animation-delay: 6s;
 }
 
