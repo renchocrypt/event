@@ -3,6 +3,28 @@ from django.conf import settings
 from django.utils import timezone
 
 
+class College(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+    logo = models.ImageField(
+        upload_to='college_logos/',
+        blank=True,
+        null=True
+    )
+    website = models.URLField(blank=True)
+    city = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+    def get_logo_url(self):
+        if self.logo:
+            return self.logo.url
+        return None
+
+
 class Event(models.Model):
     CATEGORY_CHOICES = (
         ('technical', 'Technical'),
@@ -17,6 +39,12 @@ class Event(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     college = models.CharField(max_length=200)
+    college_obj = models.ForeignKey(
+        College,
+        on_delete=models.SET_NULL,
+        null=True, blank=True,
+        related_name='events'
+    )
     category = models.CharField(
         max_length=50,
         choices=CATEGORY_CHOICES,

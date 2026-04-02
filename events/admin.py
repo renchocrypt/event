@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .models import Event, Registration
+from .models import Event, Registration, College
+
+
+@admin.register(College)
+class CollegeAdmin(admin.ModelAdmin):
+    list_display  = ['name', 'city', 'website']
+    search_fields = ['name', 'city']
 
 
 @admin.register(Event)

@@ -15,6 +15,11 @@ class CustomUser(AbstractUser):
     college = models.CharField(max_length=200, blank=True)
     phone = models.CharField(max_length=15, blank=True)
     bio = models.TextField(blank=True)
+    profile_photo = models.ImageField(
+        upload_to='profile_photos/',
+        blank=True,
+        null=True
+    )
 
     def is_professor(self):
         return self.role == 'professor'

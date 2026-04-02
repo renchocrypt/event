@@ -1,4 +1,6 @@
 {% extends 'events/dashboard_base.html' %}
+{% load static %}
+{% load college_tags %}
 
 {% block title %}My Events - EventSphere{% endblock %}
 {% block breadcrumb %}My Events{% endblock %}
@@ -59,7 +61,14 @@
       <h3>{{ event.title }}</h3>
 
       <div class="my-event-meta">
-        <span><i class="fas fa-university"></i> {{ event.college }}</span>
+        <span>
+          {% get_college_logo event.college as college_logo %}
+          {% if college_logo %}
+            <img src="{{ college_logo }}" alt="{{ event.college }}" style="width:14px;height:14px;border-radius:3px;object-fit:cover;vertical-align:middle;">
+          {% else %}
+            <img src="{% static 'events/img/default_college.svg' %}" alt="college" style="width:14px;height:14px;vertical-align:middle;">
+          {% endif %}
+          {{ event.college }}</span>
         <span><i class="fas fa-calendar-alt"></i> {{ event.date|date:"M d, Y" }}</span>
         <span><i class="fas fa-users"></i> {{ event.registered_count }}/{{ event.max_participants }}</span>
         {% if event.venue %}

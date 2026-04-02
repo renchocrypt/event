@@ -1,5 +1,6 @@
 {% extends 'events/base.html' %}
 {% load static %}
+{% load college_tags %}
 
 {% block title %}EventSphere - Discover College Events{% endblock %}
 
@@ -87,7 +88,7 @@
       <!-- Center Glow -->
       <div class="hero-glow-ring">
         <div class="hero-glow-inner">
-          <i class="fas fa-star-of-life"></i>
+          <img src="{% static 'events/img/logo.png' %}" alt="EventSphere" style="width:60px;height:60px;border-radius:50%;object-fit:cover;">
         </div>
       </div>
     </div>
@@ -195,7 +196,12 @@
 
           <div class="event-meta">
             <div class="event-meta-item">
-              <i class="fas fa-university"></i>
+              {% get_college_logo event.college as college_logo %}
+              {% if college_logo %}
+                <img src="{{ college_logo }}" alt="{{ event.college }}" style="width:16px;height:16px;border-radius:3px;object-fit:cover;">
+              {% else %}
+                <img src="{% static 'events/img/default_college.svg' %}" alt="college" style="width:16px;height:16px;">
+              {% endif %}
               <span>{{ event.college }}</span>
             </div>
             <div class="event-meta-item">

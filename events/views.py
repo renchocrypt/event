@@ -381,6 +381,12 @@ def error_500_view(request):
 @login_required
 def profile_view(request):
     """User profile page"""
+    if request.method == 'POST' and request.FILES.get('profile_photo'):
+        request.user.profile_photo = request.FILES['profile_photo']
+        request.user.save()
+        messages.success(request, 'Profile photo updated!')
+        return redirect('profile')
+
     if request.user.is_professor():
         my_events = Event.objects.filter(
             created_by=request.user

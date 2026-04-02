@@ -1,5 +1,6 @@
 {% extends 'events/base.html' %}
 {% load static %}
+{% load college_tags %}
 
 {% block title %}{{ event.title }} - EventSphere{% endblock %}
 
@@ -52,7 +53,12 @@
           <!-- Quick Meta Row -->
           <div class="detail-meta-row">
             <div class="detail-meta-chip">
-              <i class="fas fa-university"></i>
+              {% get_college_logo event.college as college_logo %}
+              {% if college_logo %}
+                <img src="{{ college_logo }}" alt="{{ event.college }}" style="width:16px;height:16px;border-radius:3px;object-fit:cover;">
+              {% else %}
+                <img src="{% static 'events/img/default_college.svg' %}" alt="college" style="width:16px;height:16px;">
+              {% endif %}
               {{ event.college }}
             </div>
             <div class="detail-meta-chip">

@@ -1,5 +1,6 @@
 {% extends 'events/dashboard_base.html' %}
 {% load static %}
+{% load college_tags %}
 
 {% block title %}Browse Events - EventSphere{% endblock %}
 {% block breadcrumb %}Browse Events{% endblock %}
@@ -127,7 +128,12 @@
 
       <div class="browse-card-meta">
         <div class="browse-meta-item">
-          <i class="fas fa-university"></i>
+          {% get_college_logo event.college as college_logo %}
+          {% if college_logo %}
+            <img src="{{ college_logo }}" alt="{{ event.college }}" style="width:15px;height:15px;border-radius:3px;object-fit:cover;">
+          {% else %}
+            <img src="{% static 'events/img/default_college.svg' %}" alt="college" style="width:15px;height:15px;">
+          {% endif %}
           <span>{{ event.college }}</span>
         </div>
         <div class="browse-meta-item">

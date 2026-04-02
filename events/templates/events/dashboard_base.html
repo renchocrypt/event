@@ -22,7 +22,7 @@
     <div class="sidebar-logo">
       <a href="{% url 'home' %}" class="sidebar-logo-link">
         <div class="sidebar-logo-icon">
-          <i class="fas fa-star-of-life"></i>
+          <img src="{% static 'events/img/logo.png' %}" alt="EventSphere" style="width:22px;height:22px;border-radius:6px;object-fit:cover;">
         </div>
         <span class="sidebar-logo-text">
           Event<strong>Sphere</strong>
@@ -36,7 +36,11 @@
     <!-- User Profile -->
     <div class="sidebar-profile">
       <div class="sidebar-avatar">
-        {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+        {% if user.profile_photo %}
+          <img src="{{ user.profile_photo.url }}" alt="{{ user.username }}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+        {% else %}
+          {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+        {% endif %}
       </div>
       <div class="sidebar-user-info">
         <span class="sidebar-username">
@@ -217,7 +221,11 @@
         <!-- Profile -->
         <div class="topbar-profile" id="profileBtn">
           <div class="topbar-avatar">
-            {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+            {% if user.profile_photo %}
+              <img src="{{ user.profile_photo.url }}" alt="{{ user.username }}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            {% else %}
+              {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+            {% endif %}
           </div>
           <div class="topbar-user">
             <span class="topbar-name">
@@ -233,7 +241,11 @@
           <div class="profile-dropdown" id="profileDropdown">
             <div class="profile-dd-header">
               <div class="profile-dd-avatar">
-                {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                {% if user.profile_photo %}
+                  <img src="{{ user.profile_photo.url }}" alt="{{ user.username }}" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                {% else %}
+                  {{ user.first_name|first|upper }}{{ user.last_name|first|upper }}
+                {% endif %}
               </div>
               <div>
                 <strong>
