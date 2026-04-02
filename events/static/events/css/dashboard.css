@@ -5,13 +5,20 @@
 :root {
   --sidebar-width: 260px;
   --topbar-height: 70px;
-  --sidebar-bg: rgba(6, 6, 18, 0.99);
-  --sidebar-border: rgba(255, 255, 255, 0.05);
+  --sidebar-bg: rgba(2, 4, 8, 0.99);
+  --sidebar-border: rgba(201, 168, 76, 0.08);
+}
+
+.dashboard-body {
+  background: radial-gradient(ellipse at 10% 10%, #0a1628 0%, #020408 60%, #060d18 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
 /* ─── Body Reset ────────────────────────────── */
 .dashboard-body {
-  background: var(--dark);
+  background: radial-gradient(ellipse at 10% 10%, #0a1628 0%, #020408 60%, #060d18 100%);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
