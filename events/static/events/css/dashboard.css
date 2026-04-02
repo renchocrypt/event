@@ -5,19 +5,17 @@
 :root {
   --sidebar-width: 260px;
   --topbar-height: 70px;
-  --sidebar-bg: rgba(2, 4, 8, 0.99);
-  --sidebar-border: rgba(201, 168, 76, 0.08);
-}
-
-.dashboard-body {
-  background: radial-gradient(ellipse at 10% 10%, #0a1628 0%, #020408 60%, #060d18 100%);
-  background-attachment: fixed;
-  overflow-x: hidden;
+  --sidebar-bg: rgba(15, 8, 5, 0.99);
+  --sidebar-border: rgba(218, 119, 86, 0.08);
 }
 
 /* ─── Body Reset ────────────────────────────── */
 .dashboard-body {
-  background: radial-gradient(ellipse at 10% 10%, #0a1628 0%, #020408 60%, #060d18 100%);
+  background: #1a0f0a;
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(218,119,86,0.10) 0%, transparent 45%),
+    radial-gradient(ellipse at 100% 100%, rgba(201,100,66,0.08) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 50%, #1a0f0a 0%, #120a06 100%);
   background-attachment: fixed;
   overflow-x: hidden;
 }

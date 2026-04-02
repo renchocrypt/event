@@ -5,21 +5,21 @@
 
 /* ─── Variables ─────────────────────────────── */
 :root {
-  --purple: #c9a84c;
-  --blue: #e8c97a;
-  --pink: #f0a500;
-  --dark: #020408;
-  --dark-2: #060d18;
-  --dark-3: #0a1628;
-  --glass: rgba(201, 168, 76, 0.04);
-  --glass-border: rgba(201, 168, 76, 0.12);
-  --text-primary: #f5f0e8;
-  --text-secondary: rgba(245, 240, 232, 0.7);
-  --text-muted: rgba(245, 240, 232, 0.35);
-  --gradient-1: linear-gradient(135deg, #c9a84c, #f0d080);
-  --gradient-2: linear-gradient(135deg, #f0a500, #ffcc44);
+  --purple: #da7756;
+  --blue: #c96442;
+  --pink: #e8956d;
+  --dark: #1a0f0a;
+  --dark-2: #1f1410;
+  --dark-3: #2a1c15;
+  --glass: rgba(218, 119, 86, 0.06);
+  --glass-border: rgba(218, 119, 86, 0.15);
+  --text-primary: #f5ede8;
+  --text-secondary: rgba(245, 237, 232, 0.72);
+  --text-muted: rgba(245, 237, 232, 0.38);
+  --gradient-1: linear-gradient(135deg, #da7756, #e8956d);
+  --gradient-2: linear-gradient(135deg, #c96442, #da7756);
   --gradient-3: linear-gradient(135deg, #43e97b, #38f9d7);
-  --shadow-glow: 0 0 40px rgba(201, 168, 76, 0.2);
+  --shadow-glow: 0 0 40px rgba(218, 119, 86, 0.2);
   --radius: 16px;
   --radius-sm: 10px;
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,7 +32,11 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(ellipse at 20% 20%, #0a1628 0%, #020408 50%, #060d18 100%);
+  background: #1a0f0a;
+  background-image:
+    radial-gradient(ellipse at 0% 0%, rgba(218,119,86,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 100% 100%, rgba(201,100,66,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(26,15,10,1) 0%, #120a06 100%);
   background-attachment: fixed;
   color: var(--text-primary);
   overflow-x: hidden;
@@ -56,29 +60,29 @@ ul { list-style: none; }
 .bg-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
-  opacity: 0.18;
+  filter: blur(120px);
+  opacity: 0.12;
   animation: float 10s ease-in-out infinite;
 }
 
 .orb-1 {
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, #c9a84c, #8b6914);
-  top: -300px; left: -250px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, #da7756, #8b3a1a);
+  top: -200px; left: -200px;
   animation-delay: 0s;
 }
 
 .orb-2 {
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, #1a4a8a, #0d2a5c);
-  top: 30%; right: -200px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #c96442, #5a2010);
+  top: 40%; right: -150px;
   animation-delay: 4s;
 }
 
 .orb-3 {
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, #c9a84c, #2a1a00);
-  bottom: -150px; left: 30%;
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, #e8956d, #6b2d10);
+  bottom: -100px; left: 35%;
   animation-delay: 7s;
 }
 
